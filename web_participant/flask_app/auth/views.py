@@ -83,10 +83,10 @@ def register():
         #token = user.generate_confirmation_token()
         # send_email(user1.email, 'Confirm Your Account',
         #   'auth/email/confirm', user=participant_1, password=password, token=token)
-        send_email(participant_1.email, 'You are in!',
-                   user=participant_1, password=password_1)
-        send_email(participant_2.email, 'You are in!',
-                   user=participant_2, password=password_2)
+        send_email(participant_1.email, subject='You are in!',
+                   template='auth/email/account_creation', user=participant_1, password=password_1)
+        send_email(participant_2.email, subject='You are in!',
+                   template='auth/email/account_creation',user=participant_2, password=password_2)
         flash('Registration was successful. An email has been sent to both e-mail addresses.', 'success')
         return redirect(url_for('main.index'))
     return render_template('auth/register.html', form=form, key=key, db_polygon=db_polygon)
@@ -128,7 +128,7 @@ def recover_password():
         user.password = password_new
         db.session.add(user)
         db.session.commit()
-        send_email(user.email, 'Your new password',
+        send_email(user.email, subject='Your new password',
                    template='auth/email/password_recovery',
                    user=user, password=password_new)
         flash('A new password has beenesent to you by email.', 'info')

@@ -17,8 +17,6 @@ class Config:
 
     MAPS_API_KEY = '...'
     JSON_AS_ASCII = False
-    #SERVER_NAME = 'cookandrun.com:8000'
-
 
 
 class DevelopmentConfig(Config):
@@ -28,7 +26,7 @@ class DevelopmentConfig(Config):
     LOGGING_LOCATION = 'flask.log'
     LOGGING_LEVEL = logging.DEBUG
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = '...'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://cookandrun:testtest@postgres/cookandrun'
 
 
 class TestingConfig(Config):
