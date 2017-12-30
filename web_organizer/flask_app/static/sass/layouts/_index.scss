@@ -1,0 +1,21 @@
+.index-container {
+  @include grid-container;
+
+
+  @include grid-media($media-md) {
+    @include grid-column(8);
+    @include grid-push(2);
+    margin-bottom: 100px;
+  }
+
+  @include grid-media($media-sm-max) {
+    @include grid-column(12);
+    margin-bottom: 100px;
+
+    .date, .location, .subdomain{
+      display: none;
+    }
+  }
+}
+
+

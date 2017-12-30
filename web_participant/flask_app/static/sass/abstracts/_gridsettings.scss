@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// 1. Breakpoints
+// -----------------------------------------------------------------------------
+//
+/// Breakpoint Boundaries
+/// @type length
+// These correspond to the Bootstrap 4 Responsive Breakpoints
+// Lower boundaries
+$screen-xs-min:               0px !default;
+$screen-sm-min:               576px !default;
+$screen-md-min:               768px !default;
+$screen-lg-min:               1024px !default;
+$screen-xl-min:               1440px !default;
+// Upper boundaries
+$screen-xs-max:               $screen-sm-min - 1px !default;
+$screen-sm-max:               $screen-md-min - 1px !default;
+$screen-md-max:               $screen-lg-min - 1px !default;
+$screen-lg-max:               $screen-xl-min - 1px !default;
+// Custom neat grids:
+// XS
+$media-xs-only: (
+    columns: 6,
+    media: 'only screen and (max-width: #{$screen-xs-max})',
+);
+// SM
+$media-sm: (
+    columns: 12,
+    media: $screen-sm-min,
+);
+$media-sm-only: (
+    columns: 12,
+    media: 'only screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})',
+);
+$media-sm-max: (
+    columns: 12,
+    media: 'only screen and (max-width: #{$screen-sm-max})',
+);
+// MD
+$media-md: (
+    columns: 12,
+    media: $screen-md-min,
+);
+$media-md-only: (
+    columns: 12,
+    media: 'only screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})',
+);
+$media-md-max: (
+    columns: 12,
+    media: 'only screen and (max-width: #{$screen-md-max})',
+);
+// LG
+$media-lg: (
+    columns: 12,
+    gutter: 30px,
+    media: $screen-lg-min,
+);
+$media-lg-only: (
+    columns: 12,
+    gutter: 30px,
+    media: 'only screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max})',
+);
+$media-lg-max: (
+    columns: 12,
+    gutter: 30px,
+    media: 'only screen and (max-width: #{$screen-lg-max})',
+);
+// XL
+$media-xl: (
+    columns: 12,
+    gutter: 30px,
+    media: $screen-xl-min,
+);
+$media-print: (
+    columns: 12,
+    gutter: .25in,
+    media: 'only print',
+);

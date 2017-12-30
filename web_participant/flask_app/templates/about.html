@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing_page.css') }}" />
+
+{% endblock %}
+
+
+{% block title %}About{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>How it works</h1>
+</div>
+
+
+{% endblock %}

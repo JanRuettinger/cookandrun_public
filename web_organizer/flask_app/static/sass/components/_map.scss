@@ -1,0 +1,26 @@
+.maps-wrapper {
+  @include grid-media($media-md) {
+    width: calc(66.66667% - 33.33333px);
+    float: left;
+    margin-left: 20px;
+    left: calc(16.66667% - 23.33333px + 20px);
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 150px;
+  }
+
+  @include grid-media($media-sm-max) {
+    width: calc(90% - 33.33333px);
+    float: left;
+    margin-left: 20px;
+    left: calc(5% - 23.33333px + 20px);
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+
+}
+
+#map {
+  height: 500px;
+}

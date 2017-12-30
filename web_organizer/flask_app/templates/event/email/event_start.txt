@@ -1,0 +1,9 @@
+Welcome to Cook and Run!
+
+Important event updates 
+The teams have been drawed. 
+You can see the results on our website({{event.subdomain}}cookandrun.com)
+Sincerely,
+The Cook and Run Team
+Note: replies to this email address are not monitored.
+

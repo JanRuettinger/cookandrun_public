@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block title %}Mail{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+   Send mail to all participants
+</div>
+    <hr>
+<div class="register-form">
+    <p>Not implemented yet! </p>
+    <!-- <form action="{{ form_action }}" method="post"> -->
+
+            <!-- {% from "partials/_formhelper.html" import render_field_placeholder %} -->
+            <!-- {{render_field_placeholder(form.subject, "Subject")}} -->
+            <!-- {{render_field_placeholder(form.content, "Your Message")}} -->
+
+            <!-- {{ form.csrf_token }} -->
+           <!--  {{ form.submit }} -->
+
+           <!-- <p><input type=submit value='Send Mail'> -->
+
+    <!-- </form> -->
+</div>
+
+{% endblock %}

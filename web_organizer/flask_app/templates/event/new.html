@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  </script>
+
+{% endblock %}
+
+
+{% block title %}new event{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    Create a new Event
+</div>
+    <hr>
+<div class="register-form">
+        <form action="{{ form_action }}" method="post">
+
+        {% from "partials/_formhelper.html" import render_field_placeholder %}
+          <!-- <legend>General information</legend> -->
+          {{render_field_placeholder(form.name, "Event name")}}
+          {{render_field_placeholder(form.date, "Event date", id="datepicker")}}
+          {{render_field_placeholder(form.subdomain, "Subdomain")}}
+          {{render_field_placeholder(form.city, "Name der Stadt")}}
+          {{render_field_placeholder(form.postcode, "Postleitzahl")}}
+
+            {{ form.csrf_token }}
+           <!--  {{ form.submit }} -->
+
+           <p><input type=submit value='Create Event'>
+
+        </form>
+</div>
+
+{% endblock %}

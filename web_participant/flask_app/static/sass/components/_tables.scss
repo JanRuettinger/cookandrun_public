@@ -1,0 +1,123 @@
+table {
+  border-collapse: collapse;
+  margin: $small-spacing 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid shade($base-border-color, 25%);
+  font-weight: 600;
+  padding: $small-spacing 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+
+.event-table{
+  background-color: $navbar-background-color;
+  table-layout: auto;
+  text-align: center;
+
+  .event-table-header {
+    background-color: $table-row-header-color;
+    color: $table-row-header-font-color
+  }
+
+  .event-table-row-header {
+    text-align: center;
+    border-right: 1px solid shade($base-border-color, 25%);
+  }
+
+  .event-table-row:nth-child(even){
+    background-color: $table-row-even-color;
+    color: $table-row-font-color;
+  }
+
+  .event-table-row:nth-child(odd){
+    background-color: $table-row-odd-color;
+    color: $table-row-font-color;
+  }
+}
+
+
+.team-table{
+  background-color: $navbar-background-color;
+  table-layout: auto;
+  text-align: center;
+
+  .team-table-header {
+    background-color: $table-row-header-color;
+    color: $table-row-header-font-color
+  }
+
+  .team-table-row-header {
+    text-align: center;
+    border-right: 1px solid shade($base-border-color, 25%);
+  }
+
+  // .team-table-row:nth-child(even){
+  //   background-color: $table-row-even-color;
+  //   color: $table-row-font-color;
+  // }
+
+  // .team-table-row:nth-child(odd){
+  //   background-color: $table-row-even-color;
+  //   color: $table-row-font-color;
+  // }
+
+  .team-table-body-section:nth-child(even){
+    background-color: $table-row-even-color;
+    color: $table-row-font-color;
+  }
+
+  .team-table-body-section:nth-child(odd){
+    background-color: $table-row-odd-color;
+    color: $table-row-font-color;
+  }
+}
+
+
+.button-container{
+  margin-top: 50px;
+}
+
+.button-table{
+  background-color: $navbar-background-color;
+  table-layout: auto;
+  text-align: center;
+
+  .button-table-header {
+    background-color: green;;
+    color: $table-row-header-font-color
+  }
+
+  .button-table-row-header {
+    text-align: center;
+    border-right: 1px solid shade($base-border-color, 25%);
+  }
+
+  td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .button-extension {
+   width: 100%;
+  }
+
+  // .button-table-row:nth-child(even){
+  //   background-color: $table-row-even-color;
+  //   color: $table-row-font-color;
+  // }
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing_page.css') }}" />
+
+{% endblock %}
+{% block title %}FAIL{% endblock %}
+<body>
+
+    {% block content %}
+
+      {% block page_content %}
+
+        There is no event with this subdomain.
+        Please check the url.
+
+
+      {% endblock %}
+    {% endblock %}
+
+    {% block script %}
+
+
+
+{% endblock %}
+</body>
+</html>
+
+
+
+

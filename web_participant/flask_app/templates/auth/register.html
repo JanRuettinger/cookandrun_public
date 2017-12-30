@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<script src="{{url_for('static', filename='js/register.js')}}"></script>
+{% endblock %}
+
+
+{% block title %}Register{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Register</h1>
+    <hr>
+</div>
+<div class="update-form">
+        <form action="register" method="post">
+
+            {% from "partials/_formhelper.html" import render_field_placeholder%}
+          <legend>General information</legend>
+            {{render_field_placeholder(form.teamname, "Your unique teamname")}}
+            {{render_field_placeholder(form.name_1, "Fullname of participant 1")}}
+            {{render_field_placeholder(form.email_1, "E-Mail of participant 1")}}
+            {{render_field_placeholder(form.name_2, "Fullname of participant 2")}}
+            {{render_field_placeholder(form.email_2, "E-Mail of participant 2")}}
+          <br>
+          <legend>Location of your kitchen</legend>
+            {{render_field_placeholder(form.city, "City")}}
+            {{render_field_placeholder(form.postcode, "Postal code")}}
+            {{render_field_placeholder(form.street, "Street")}}
+            <div id="location-feedback" class="location-feedback"></div>
+          <br>
+          <legend>Nutrition information </legend>
+          <div class="nutrition-container">
+
+            <span>Vegetarian</span>
+            {% if form.diet.data == "1" %}
+              <input id="diet-0" name="diet" type="radio" value="1" checked>
+            {% else %}
+              <input id="diet-0" name="diet" type="radio" value="1">
+            {% endif %}
+
+            <span>Veganian</span>
+            {% if form.diet.data == "2" %}
+              <input id="diet-1" name="diet" type="radio" value="2" checked>
+            {% else %}
+              <input id="diet-1" name="diet" type="radio" value="2">
+            {% endif %}
+
+            <span>Meat</span>
+            {% if form.diet.data == "3" %}
+              <input id="diet-2" name="diet" type="radio" value="3" checked>
+            {% else %}
+              <input id="diet-2" name="diet" type="radio" value="3">
+            {% endif %}
+          </div>
+
+          {% if form.diet.errors %}
+            <div class="form-error">{{ form.diet.errors[0] }}</div>
+          {% endif %}
+            <br>
+            <textarea id="specialties" name="specialties" cols="40" rows="5" placeholder="Other things you want to tell your hosts (e.g. allergies)"></textarea>
+            {% if form.specialties.errors %}
+            <div class="form-error">{{ form.specialties.errors[0] }}</div>
+            {% endif %}
+
+            {{ form.csrf_token }}
+            <div class="submit-btn">
+            {{ form.submit }}
+            </div>
+        </form>
+</div>
+
+{% endblock %}
+
+
+
+

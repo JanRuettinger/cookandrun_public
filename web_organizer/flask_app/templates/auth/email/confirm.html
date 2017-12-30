@@ -1,0 +1,11 @@
+<p>Dear {{ user.name }},</p>
+<p>Welcome to <b>Cook and Run</b>!</p>
+<h2>Your account details:</h2>
+<p>E-Mail: {{user.email}}</p>
+<p>Password: {{password}} (Please change your password as soon as possible.)</p>
+<p>To confirm your account please <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">click here</a>.</p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>Sincerely,</p>
+<p>The Cook and Run Team</p>
+<p><small>Note: replies to this email address are not monitored.</small></p>

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+{% block title %}Events{% endblock %}
+
+
+{% block page_content %}
+
+    <div class="page-header">Edit {{event.name}}</div><hr>
+    <div class="index-container">
+      <table class="event-table">
+        <tr class="event-table-header">
+          <th class="event-table-row-header">Event name</th>
+          <th class="event-table-row-header subdomain">Subdomain</th>
+          <th class="event-table-row-header date">Datum</th>
+          <th class="event-table-row-header location">Ort</th>
+          <th class="event-table-row-header">Teilnehmer</th>
+          <th class="event-table-row-header">Status</th>
+        </tr>
+        <tr class="event-table-row">
+          <td>{{event.name}}</td>
+          <td class='subdomain'>{{event.subdomain}}</td>
+          <td class='date'>{{event.date | event_date}}</td>
+          <td class='location'>{{event.city}}</td>
+          <td>{{number_teams}}</td>
+          <td>
+          {% if event.status == 0  %}
+            draft mode
+          {% elif event.status == 1 %}
+            draft finished
+          {% elif event.status == 2 %}
+            registration open
+          {% elif event.status == 3 %}
+            registration closed
+          {% elif event.status == 4 %}
+            ready for draw
+          {% elif event.status == 5 %}
+            draw finished
+          {% elif event.status == 6 %}
+            event is started
+          {% else %}
+            event is hacked
+          {% endif %}
+          </td>
+        </tr>
+      </table>
+      <div class="button-container">
+      <table class="button-table">
+        <tr class="button-table-header">
+          <th class="button-table-row-header">Action</th>
+          <th class="button-table-row-header">Function</th>
+        </tr>
+
+<!--     #status
+    # 0 = draft start
+    # 1 = draft finish
+    # 2 = registration open
+    # 3 = registration closed
+    # 4 = ready for draw
+    # 5 = draw finished
+    # 6 = event started
+    -->
+        {% if event.status == 0 %}
+        <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_settings', id=event.id)}}" class="button button-extension">Update event settings</a></td>
+            <td>Hier kannst du die Event informationen veraendern und anpassen</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_map', id=event.id)}}" class="button button-extension">Update map</a></td>
+            <td>Hier kannst du einstellen, aus welchem Gebiet die Teams kommen dürfen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><span class="button-disabled button-extension">Open registration </span></td>
+            <td>Bevor du die Registrierung oeffnen kannst, musst du zuert unter "Update settings" weitere Einstellungen festlegen.</td>
+          </tr>
+        {% endif %}
+
+        {% if event.status == 1 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_settings', id=event.id)}}" class="button button-extension">Update event settings</a></td>
+            <td>Hier kannst du die Event informationen veraendern und anpassen</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_map', id=event.id)}}" class="button button-extension">Update map</a></td>
+            <td>Hier kannst du einstellen, aus welchem Gebiet die Teams kommen dürfen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.open_registration', id=event.id)}}" class="button button-extension">Open registration </a></td>
+            <td>Bist du mit allen Einstellungen zufrieden, kannst du hier die Registrierung für Teilnehmer öffnen.</td>
+          </tr>
+        {% endif %}
+
+        {% if event.status == 2 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_settings', id=event.id)}}" class="button-disabled button-extension">Update event settings</a></td>
+            <td>Hier kannst du die Event informationen veraendern und anpassen</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_map', id=event.id)}}" class="button-disabled button-extension">Update map</a></td>
+            <td>Erst wenn die Registrierung geschlossen ist, kannst du Einstellungen veraendern.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.close_registration', id=event.id)}}" class="button button-extension">Close registration </a></td>
+            <td>Erst wenn die Registrierung geschlossen ist, kannst du Einstellungen veraendern.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_map', id=event.id)}}" class="button button-extension">Show map</a></td>
+            <td>Hier kannst du sehen, aus welchem Gebiet die Teams kommen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.draw', id=event.id)}}" class="button-disabled button-extension">Draw teams</a></td>
+            <td>Wenn die die Anzahl an Teams durch restlos durch 9 teilbar ist und die Regrisrierung geschlossen ist, kannst du hier die Gangauslosung starten.</td>
+          </tr>
+        {% endif %}
+
+        {% if event.status == 3 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_settings', id=event.id)}}" class="button button-extension">Update event settings</a></td>
+            <td>Hier kannst du die Event informationen veraendern und anpassen</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_map', id=event.id)}}" class="button button-extension">Update map</a></td>
+            <td>Hier kannst du einstellen, aus welchem Gebiet die Teams kommen dürfen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.open_registration', id=event.id)}}" class="button button-extension">Open registration </a></td>
+            <td>Bist du mit allen Einstellungen zufrieden, kannst du hier die Registrierung für Teilnehmer öffnen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_map', id=event.id)}}" class="button button-extension">Show map</a></td>
+            <td>Hier kannst du sehen, aus welchem Gebiet die Teams kommen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.draw', id=event.id)}}" class="button-disabled button-extension">Draw teams</a></td>
+            <td>Wenn die die Anzahl an Teams durch restlos durch 9 teilbar ist und die Regrisrierung geschlossen ist, kannst du hier die Gangauslosung starten.</td>
+          </tr>
+        {% endif %}
+
+        {% if event.status == 4 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_settings', id=event.id)}}" class="button button-extension">Update event settings</a></td>
+            <td>Hier kannst du die Event informationen veraendern und anpassen</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.update_map', id=event.id)}}" class="button button-extension">Update map</a></td>
+            <td>Hier kannst du einstellen, aus welchem Gebiet die Teams kommen dürfen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_map', id=event.id)}}" class="button button-extension">Show map</a></td>
+            <td>Hier kannst du sehen, aus welchem Gebiet die Teams kommen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.draw', id=event.id)}}" class="button button-extension">Draw teams</a></td>
+            <td>Wenn die die Anzahl an Teams durch restlos durch 9 teilbar ist und die Regrisrierung geschlossen ist, kannst du hier die Gangauslosung starten.</td>
+          </tr>
+
+        {% endif %}
+
+        {% if event.status == 5 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_map', id=event.id)}}" class="button button-extension">Show map</a></td>
+            <td>Hier kannst du dir die Karte mit den Auslosungen anschauen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_teams', id=event.id)}}" class="button button-extension">Show draw result</a></td>
+            <td>Hier kannst du dier die Ergebnisse der Auslosungen anschauen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.start', id=event.id)}}" class="button button-extension">Start event</a></td>
+            <td>Hier kannst du das Event offiziel starten. Den Teilnehmern wird per E-Mail das Auslosungsergebnis mitgeteilt.</td>
+          </tr>
+        {% endif %}
+
+        {% if event.status == 6 %}
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_map', id=event.id)}}" class="button button-extension">Show map</a></td>
+            <td>Hier kannst du dir die Karte mit den Auslosungen anschauen.</td>
+          </tr>
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.show_teams', id=event.id)}}" class="button button-extension">Show draw result</a></td>
+            <td>Hier kannst du dier die Ergebnisse der Auslosungen anschauen.</td>
+          </tr>
+        {% endif %}
+
+          <tr class="button-table-row">
+            <td><a href="{{url_for('event.delete', id=event.id)}}" class="button button-extension">Delete event</a></td>
+            <td>Das Event und alle Teilnehmerdaten werden gelöscht.</td>
+          </tr>
+
+      </table>
+      </div>
+    </div>
+
+{% endblock %}

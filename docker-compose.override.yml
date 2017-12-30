@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  web_organizer:
+    build: ./web_organizer
+    expose:
+      - "8000"
+    volumes:
+      #      - static-organizer:/home/flask/flask_app/static
+      - ./web_organizer/:/home/flask
+    environment:
+      - FLASK_APP=/home/flask/wsgi.py
+      - FLASK_DEBUG=1
+    command: flask run --host=0.0.0.0 --port=8000
+    depends_on:
+      - postgres
+
+  web_participant:
+    build: ./web_participant
+    expose:
+      - "8000"
+    volumes:
+      # - static-participant:/home/flask/flask_app/static
+      - ./web_participant/:/home/flask
+    environment:
+      - FLASK_APP=/home/flask/wsgi.py
+      - FLASK_DEBUG=1
+    command: flask run --host=0.0.0.0 --port=8000
+    depends_on:
+      - postgres
+
+  postgres:
+    ports:
+      - "5432:5432"

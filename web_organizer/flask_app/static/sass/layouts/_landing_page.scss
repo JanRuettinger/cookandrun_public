@@ -1,0 +1,24 @@
+.main-bg {
+  background: url(../img/opt/bg_food.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.landingpage-container {
+  @include grid-container;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 0px;;
+  background-color: $secondary-background-color;
+
+  @include grid-media($media-md) {
+    margin-top: 100px;
+    @include grid-column(6);
+    @include grid-push(3);
+  }
+
+  @include grid-media($media-sm-max) {
+    margin-top: 50px;
+    @include grid-column(8);
+    @include grid-push(2);
+  }
+}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+{% block title %}Teams{% endblock %}
+
+
+{% block page_content %}
+
+    <div class="page-header">{{event.name}}</div><hr>
+    <div class="index-container">
+      {% if groups is none  %}
+        <div class="">Bisher gibt es noch keine Gruppen!</div>
+      {% else %}
+      <table class="team-table">
+        <tr class="team-table-header">
+          <th class="team-table-row-header">Course</th>
+          <th class="team-table-row-header">Host</th>
+          <th class="team-table-row-header">Guest 1</th>
+          <th class="team-table-row-header">Guest 2</th>
+        </tr>
+
+        {% for g in groups %}
+        <tbody class="team-table-body-section">
+          <tr class="team-table-row">
+            <td>Starter 1</td>
+            <td>{{g[0]}}</td>
+            <td>{{g[1]}}</td>
+            <td>{{g[2]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Starter 2</td>
+            <td>{{g[3]}}</td>
+            <td>{{g[4]}}</td>
+            <td>{{g[5]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Starter 3</td>
+            <td>{{g[6]}}</td>
+            <td>{{g[7]}}</td>
+            <td>{{g[8]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Main 1</td>
+            <td>{{g[9]}}</td>
+            <td>{{g[10]}}</td>
+            <td>{{g[11]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Main 2</td>
+            <td>{{g[12]}}</td>
+            <td>{{g[13]}}</td>
+            <td>{{g[14]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Main 3</td>
+            <td>{{g[15]}}</td>
+            <td>{{g[16]}}</td>
+            <td>{{g[17]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Dessert 1</td>
+            <td>{{g[18]}}</td>
+            <td>{{g[19]}}</td>
+            <td>{{g[20]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Dessert 2</td>
+            <td>{{g[21]}}</td>
+            <td>{{g[22]}}</td>
+            <td>{{g[23]}}</td>
+          </tr>
+
+          <tr class="team-table-row">
+            <td>Dessert 3</td>
+            <td>{{g[24]}}</td>
+            <td>{{g[25]}}</td>
+            <td>{{g[26]}}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        </table>
+      {% endif %}
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+.settings-bg {
+background: url(../img/opt/bg_settings.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.settings-container {
+  @include grid-container;
+
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 0px;;
+  background-color: $secondary-background-color;
+
+  @include grid-media($media-md) {
+    @include grid-column(4);
+    @include grid-push(4);
+    margin-top: 100px;
+  }
+
+  @include grid-media($media-sm-max) {
+    @include grid-column(10);
+    @include grid-push(1);
+    margin-top: 50px;
+  }
+}
+
+.auth-text {
+  color: white;
+}

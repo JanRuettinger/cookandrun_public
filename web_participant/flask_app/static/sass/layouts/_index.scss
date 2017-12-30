@@ -1,0 +1,30 @@
+.index-container {
+  @include grid-container;
+  @include grid-column(8);
+  @include grid-push(2);
+
+  margin-bottom: 100px;
+}
+
+.timetable {
+  @include grid-container;
+
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 0px;;
+  background-color: $secondary-background-color;
+
+  @include grid-media($media-md) {
+    @include grid-column(4);
+    @include grid-push(4);
+    margin-bottom: 70px;
+    margin-top: 80px;
+  }
+
+  @include grid-media($media-sm-max) {
+    @include grid-column(10);
+    @include grid-push(1);
+    margin-bottom: 70px;
+    margin-top: 50px;
+  }
+}

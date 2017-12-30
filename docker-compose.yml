@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  web_organizer:
+    build: ./web_organizer
+    expose:
+      - "8000"
+        #    volumes:
+        #    - static-organizer:/home/flask/flask_app/static
+    command: /usr/local/bin/gunicorn  --log-level "info" --log-file=- -b :8000 wsgi:app
+    depends_on:
+      - postgres
+
+  web_participant:
+    build: ./web_participant
+    expose:
+      - "8000"
+        # volumes:
+        # - static-participant:/home/flask/flask_app/static
+    command: /usr/local/bin/gunicorn  --log-level "info" --log-file=- -b :8000 wsgi:app
+    depends_on:
+      - postgres
+
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+        #volumes:
+      # - static-organizer:/www/static_organizer
+      #- static-participant:/www/static_participant
+    depends_on:
+      - web_organizer
+      - web_participant
+
+  postgres:
+    restart: always
+    build: ./postgres
+    volumes:
+      - db:/var/lib/postgresql
+    expose:
+      - "5432"
+volumes:
+  #static-organizer:
+  #static-participant:
+  db:

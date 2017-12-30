@@ -1,0 +1,48 @@
+{% macro render_navbar(current_user, form = None) %}
+
+  {% if current_user.is_authenticated  %}
+    <nav>
+        <div class="nav-logo">
+          <a href="/">Participant</a>
+        </div>
+        <div class="nav-links">
+          <span class="nav-link"><a href="{{url_for('main.settings')}}">Account settings</a></span>
+          <span class="nav-link"><a href="{{url_for('auth.logout')}}">Logout</a></span>
+        </div>
+    </nav>
+
+  {% elif 1 == 2 %}
+      <nav>
+        <div class="logo">
+          <a href="/"><span>Participant</span></a>
+        </div>
+        <div class="links">
+          <div><a href="{{url_for('main.contact')}}">Need help?</a></div>
+          <div><a href="{{url_for('main.about')}}">How it works</a></div>
+          <div><a href="{{url_for('main.settings')}}">Change Teamsettings</a></div>
+          <div><a href="{{url_for('auth.logout')}}">Logout</a></div>
+        </div>
+    </nav>
+
+  {% else %}
+      {% if request.endpoint == "auth.login" or request.endpoint == "auth.register" or request.endpoint == "auth.recover" or request.endpoint == "main.register" or request.endpoint == "main.fail"%}
+
+      {% else %}
+        <nav>
+            <div class="nav-logo">
+              <a href="/">Participant</a>
+            </div>
+            <div class="navbar-login">
+              <form action="/auth/login" id="signin" class="navbar-login-form" method="post">
+                  <input id="email" type="email" class="navbar-login-input" name="email" value="" placeholder="Email Address">
+                  <input id="password" type="password" class="navbar-login-input" name="password" value="" placeholder="Password">
+                  <button type="submit" class="navbar-login-submit">Login</button>
+                  {{ form.csrf_token }}
+              </form>
+            </div>
+        </nav>
+      {% endif %}
+
+  {% endif %}
+
+{% endmacro %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Settings{% endblock %}
+
+{% block page_content %}
+<div class="page-header">Update event settings</div><hr>
+        <div class="update-form">
+            <form action="settings" method="post">
+                {{ form.teamname(value=current_user.team.teamname) }}
+                {{ form.name(value=current_user.name) }}
+                {{ form.email(value=current_user.email) }}
+                {{ form.diet(value=current_user.team.diet) }}
+                {{ form.password(placeholder="New password") }}
+                {{ form.csrf_token }}
+                {{ form.submit}}
+            </form>
+
+        </div>
+</div>
+{% endblock %}

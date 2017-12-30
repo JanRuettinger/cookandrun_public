@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %} Login{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Login</h1><hr>
+</div>
+
+<div class="update-form">
+    {% from "partials/_formhelper.html" import render_field_placeholder %}
+    <form action="login" method="post">
+
+        <div class="form-element">
+        {{ render_field_placeholder(form.email, "E-Mail") }}
+        </div>
+        <div class="form-element">
+        {{ render_field_placeholder(form.password, "Password", type="password")}}
+        </div>
+        <div class="form-element">
+        {{ form.csrf_token }}
+        {{ form.submit }}
+        </div>
+    </form>
+
+    <p>
+        New user?
+        <a href="{{ url_for('auth.register') }}">
+          Click here to register
+        </a>
+    </p>
+    <p>
+        Forgot passwort?
+        <a href="{{ url_for('auth.recover_password') }}">
+          Click here to recover your password
+        </a>
+    </p>
+</div>
+{% endblock %}

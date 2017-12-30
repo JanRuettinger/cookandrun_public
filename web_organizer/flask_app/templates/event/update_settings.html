@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+
+<script>
+
+$(function(){
+    $("#datepicker").datepicker({ dateFormat: 'MM d, yy' });
+});
+
+$(document).ready(function(){
+    $('input.timepicker').timepicker({});
+});
+</script>
+
+{% endblock %}
+
+{% block title %}Update event settings{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">Update event settings</div><hr>
+<div class="index-container">
+  <div class="event-update-form">
+        <form id="UpdateEvent" action="{{ form_action }}" method="post">
+
+        {% from "partials/_formhelper.html" import render_field_placeholder %}
+          <div class="form-element">
+            <div>Event name</div>
+            {{render_field_placeholder(form.name, "Name of event")}}
+          </div>
+
+          <div class="form-element">
+            <div>Subdomain</div>
+            {{render_field_placeholder(form.subdomain, "Subdomain of event")}}
+          </div>
+
+          <div class="form-element">
+            <div>Event date</div>
+          {{render_field_placeholder(form.date, "Date of event", id="datepicker")}}
+          </div>
+
+          <div class="form-element">
+            <div>Begin starter</div>
+          {{render_field_placeholder(form.starter_time, "Begin starter", value=event.starter_time, class="timepicker")}}
+            </div>
+
+          <div class="form-element">
+            <div>Begin main</div>
+          {{render_field_placeholder(form.main_time, "Begin main", id="timepicker", value=event.main_time, class="timepicker")}}
+          </div>
+
+          <div class="form-element">
+            <div>Begin dessert</div>
+          {{render_field_placeholder(form.dessert_time, "Begin dessert", id="timepicker", value=event.dessert_time, class="timepicker")}}
+            </div>
+
+          <div class="form-element">
+            <div>Begin afterparty</div>
+          {{render_field_placeholder(form.afterparty_time, "Begin afterparty", id="timepicker", class="timepicker")}}
+          </div>
+
+          <div class="form-element">
+            <div>Address afterparty</div>
+          {{render_field_placeholder(form.afterparty_address, "E.g. Erlangen, E-Werk")}}
+            </div>
+
+          <div class="form-element">
+            <div>Description afterparty (max. 200 characters)</div>
+          {{render_field_placeholder(form.afterparty_description, "Afterparty description")}}
+            </div>
+
+          {{ form.csrf_token }}
+
+        </form>
+         <div class="submit-btn"><input id='submit' type=submit value='Submit changes' form="UpdateEvent"></div>
+
+        </div>
+</div>
+{% endblock %}

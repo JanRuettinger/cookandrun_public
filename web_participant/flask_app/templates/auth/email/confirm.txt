@@ -1,0 +1,13 @@
+Dear {{ user.name }},
+
+Welcome to Cook and Run!
+
+Your account detais:
+E-Mail: {{user.email}}
+Password: {{password}} (Please change your password as soon as possible.)
+
+Sincerely,
+
+The C&R Team
+
+Note: replies to this email address are not monitored.

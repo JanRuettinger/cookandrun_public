@@ -1,0 +1,298 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADMINISTRATOR	models.py	/^    ADMINISTRATOR = 0x80$/;"	v	class:Permission
+AnonymousUser	models.py	/^class AnonymousUser(AnonymousUserMixin):$/;"	c
+AnonymousUserMixin	models.py	/^from flask_login import UserMixin, AnonymousUserMixin$/;"	i
+Blueprint	auth/__init__.py	/^from flask import Blueprint$/;"	i
+Blueprint	auth/views.py	/^from . import auth # import Blueprint object$/;"	i
+Blueprint	main/__init__.py	/^from flask import Blueprint$/;"	i
+BooleanField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+BooleanField	main/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField$/;"	i
+COMMENT	models.py	/^    COMMENT = 0x02$/;"	v	class:Permission
+Config	default_config.py	/^class Config:$/;"	c
+CsrfProtect	factory.py	/^from flask_wtf.csrf import CsrfProtect$/;"	i
+DEBUG	default_config.py	/^    DEBUG = False$/;"	v	class:TestingConfig
+DEBUG	default_config.py	/^    DEBUG = True$/;"	v	class:DevelopmentConfig
+DevelopmentConfig	default_config.py	/^class DevelopmentConfig(Config):$/;"	c
+EditProfileForm	main/forms.py	/^class EditProfileForm(FlaskForm):$/;"	c
+EditProfileForm	main/views.py	/^from .forms import EditProfileForm$/;"	i
+Email	auth/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Email	main/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+EqualTo	auth/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+EqualTo	main/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Event	auth/views.py	/^from ..models import Permission, Role, User, Team, Event$/;"	i
+Event	main/views.py	/^from ..models import User, Event$/;"	i
+Event	models.py	/^class Event(db.Model):$/;"	c
+EventList	models.py	/^class EventList(db.Model):$/;"	c
+FOLLOW	models.py	/^    FOLLOW = 0x01$/;"	v	class:Permission
+Flask	factory.py	/^from flask import Flask$/;"	i
+FlaskForm	auth/forms.py	/^from flask_wtf import FlaskForm$/;"	i
+FlaskForm	main/forms.py	/^from flask_wtf import FlaskForm$/;"	i
+IntegrityError	models.py	/^    from sqlalchemy.exc import IntegrityError$/;"	i
+Length	auth/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Length	main/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+LoginForm	auth/forms.py	/^class LoginForm(FlaskForm):$/;"	c
+LoginForm	auth/views.py	/^from .forms import LoginForm, RegistrationForm$/;"	i
+LoginForm	main/views.py	/^from flask_app.auth.forms import LoginForm, RegistrationForm$/;"	i
+LoginManager	factory.py	/^from flask_login import LoginManager$/;"	i
+MODERATE_COMMENTS	models.py	/^    MODERATE_COMMENTS = 0x08$/;"	v	class:Permission
+Mail	factory.py	/^from flask_mail import Mail$/;"	i
+Message	email.py	/^from flask_mail import Message$/;"	i
+PasswordField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+PasswordField	main/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField$/;"	i
+Permission	auth/views.py	/^from ..models import Permission, Role, User, Team, Event$/;"	i
+Permission	models.py	/^class Permission:$/;"	c
+RadioField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+RadioField	main/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField$/;"	i
+Regexp	auth/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Regexp	main/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+RegistrationForm	auth/forms.py	/^class RegistrationForm(FlaskForm):$/;"	c
+RegistrationForm	auth/views.py	/^from .forms import LoginForm, RegistrationForm$/;"	i
+RegistrationForm	main/views.py	/^from flask_app.auth.forms import LoginForm, RegistrationForm$/;"	i
+Required	auth/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Required	main/forms.py	/^from wtforms.validators import Required, Email, Length, Regexp, EqualTo$/;"	i
+Role	auth/views.py	/^from ..models import Permission, Role, User, Team, Event$/;"	i
+Role	models.py	/^class Role(db.Model):$/;"	c
+SECRET_KEY	default_config.py	/^    SECRET_KEY = "prod key"$/;"	v	class:TestingConfig
+SECRET_KEY	default_config.py	/^    SECRET_KEY = 'development key'$/;"	v	class:Config
+SQLALCHEMY_DATABASE_URI	default_config.py	/^    SQLALCHEMY_DATABASE_URI = ''$/;"	v	class:TestingConfig
+SQLALCHEMY_DATABASE_URI	default_config.py	/^    SQLALCHEMY_DATABASE_URI = 'postgresql:\/\/cookandrun:fau@localhost\/organizer_app'$/;"	v	class:DevelopmentConfig
+SQLALCHEMY_TRACK_MODIFICATIONS	default_config.py	/^    SQLALCHEMY_TRACK_MODIFICATIONS = False$/;"	v	class:Config
+SQLAlchemy	factory.py	/^from flask_sqlalchemy import SQLAlchemy$/;"	i
+SendPolygonToBackEnd	static/js/area.js	/^function SendPolygonToBackEnd(polygon) {$/;"	f
+Serializer	models.py	/^from itsdangerous import TimedJSONWebSignatureSerializer as Serializer$/;"	i
+StringField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+StringField	main/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField$/;"	i
+SubmitField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+SubmitField	main/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField$/;"	i
+Team	auth/views.py	/^from ..models import Permission, Role, User, Team, Event$/;"	i
+Team	models.py	/^class Team(db.Model):$/;"	c
+TestingConfig	default_config.py	/^class TestingConfig(Config):$/;"	c
+TextAreaField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+TextField	auth/forms.py	/^from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextField, TextAreaField$/;"	i
+Thread	email.py	/^from threading import Thread$/;"	i
+User	auth/forms.py	/^from ..models import User$/;"	i
+User	auth/views.py	/^from ..models import Permission, Role, User, Team, Event$/;"	i
+User	main/forms.py	/^from ..models import User$/;"	i
+User	main/views.py	/^from ..models import User, Event$/;"	i
+User	models.py	/^class User(UserMixin, db.Model):$/;"	c
+UserMixin	models.py	/^from flask_login import UserMixin, AnonymousUserMixin$/;"	i
+ValidationError	auth/forms.py	/^from wtforms import ValidationError$/;"	i
+ValidationError	main/forms.py	/^from wtforms import ValidationError$/;"	i
+WRITE_ARTICLES	models.py	/^    WRITE_ARTICLES = 0x04$/;"	v	class:Permission
+__init__	models.py	/^    def __init__(self, **kwargs):$/;"	m	class:Event
+__init__	models.py	/^    def __init__(self, **kwargs):$/;"	m	class:User
+__repr__	models.py	/^    def __repr__(self):$/;"	m	class:Role	file:
+__repr__	models.py	/^    def __repr__(self):$/;"	m	class:User	file:
+__tablename__	models.py	/^    __tablename__ = 'eventlist'$/;"	v	class:EventList
+__tablename__	models.py	/^    __tablename__ = 'events'$/;"	v	class:Event
+__tablename__	models.py	/^    __tablename__ = 'roles'$/;"	v	class:Role
+__tablename__	models.py	/^    __tablename__ = 'teams'$/;"	v	class:Team
+__tablename__	models.py	/^    __tablename__ = 'users'$/;"	v	class:User
+_address	models.py	/^    _address = db.Column(db.Text())$/;"	v	class:Event
+_polygon	models.py	/^    _polygon = db.Column(db.Text(), default={})$/;"	v	class:Event
+about	main/views.py	/^def about():$/;"	f
+address	models.py	/^    def address(self):$/;"	m	class:Event
+address	models.py	/^    def address(self, value):$/;"	m	class:Event
+admin_id	models.py	/^    admin_id = db.Column(db.Integer, db.ForeignKey('User.id'))$/;"	v	class:EventList
+admin_required	decorators.py	/^def admin_required(f):$/;"	f
+admin_required	main/views.py	/^from ..decorators import admin_required$/;"	i
+afterparty_address	models.py	/^    afterparty_address = db.Column(db.String(140))$/;"	v	class:Event
+afterparty_description	models.py	/^    afterparty_description = db.Column(db.String(140))$/;"	v	class:Event
+auth	auth/__init__.py	/^auth = Blueprint('auth', __name__)$/;"	v
+auth	auth/views.py	/^from . import auth # import Blueprint object$/;"	i
+auth_blueprint	factory.py	/^    from .auth import auth as auth_blueprint$/;"	i
+basedir	default_config.py	/^basedir = os.path.abspath(os.path.dirname(__file__))$/;"	v
+before_request	auth/views.py	/^def before_request():$/;"	f
+bleach	models.py	/^import bleach$/;"	i
+branch_labels	alembic/versions/26990f2563eb_add_a_column.py	/^branch_labels = None$/;"	v
+branch_labels	alembic/versions/93bb9677b00f_create_account_table.py	/^branch_labels = None$/;"	v
+can	models.py	/^    def can(self, permissions):$/;"	m	class:AnonymousUser
+can	models.py	/^    def can(self, permissions):$/;"	m	class:User
+checkLocation	templates/auth/register.html	/^function checkLocation(position, polygon) {$/;"	f
+check_password_hash	models.py	/^from werkzeug.security import generate_password_hash, check_password_hash$/;"	i
+city	auth/forms.py	/^    city = StringField('City', validators=[Required(), Length(1, 64)])$/;"	v	class:RegistrationForm
+city	models.py	/^    city = None$/;"	v	class:Event
+city	models.py	/^    city = db.Column(db.String(64))$/;"	v	class:Team
+config	alembic/env.py	/^config = context.config$/;"	v
+config	default_config.py	/^config = {$/;"	v
+config	factory.py	/^from .default_config import config$/;"	i
+confirm	auth/views.py	/^def confirm(token):$/;"	f
+confirm	models.py	/^    def confirm(self, token):$/;"	m	class:User
+confirmed	models.py	/^    confirmed = db.Column(db.Boolean, default=False)$/;"	v	class:User
+confirmtoken	auth/views.py	/^def confirmtoken():$/;"	f
+contact	main/views.py	/^def contact():$/;"	f
+context	alembic/env.py	/^from alembic import context$/;"	i
+controlText	static/js/area.js	/^  var controlText = document.createElement('div');$/;"	v
+createPolygon	static/js/area.js	/^function createPolygon(coords) {$/;"	f
+createPolygon	static/js/show_map.js	/^function createPolygon(coords) {$/;"	f
+create_app	factory.py	/^def create_app(config_name):$/;"	f
+csrf	factory.py	/^csrf = CsrfProtect()$/;"	v
+current_app	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+current_app	email.py	/^from flask import current_app, render_template$/;"	i
+current_app	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+current_app	models.py	/^from flask import current_app$/;"	i
+current_user	auth/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+current_user	decorators.py	/^from flask_login import current_user$/;"	i
+current_user	main/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+date	models.py	/^    date = db.Column(db.DateTime(), default=datetime.utcnow)$/;"	v	class:Event
+datetime	models.py	/^from datetime import datetime$/;"	i
+db	auth/views.py	/^from ..factory import db$/;"	i
+db	factory.py	/^db = SQLAlchemy()$/;"	v
+db	main/views.py	/^from ..factory import db$/;"	i
+db	models.py	/^from .factory import db$/;"	i
+debounce	static/js/area.js	/^var debounce = function(func, delay) {$/;"	f
+decorated_function	decorators.py	/^    def decorated_function(*args, **kwargs):$/;"	f	function:admin_required
+default	models.py	/^    default = db.Column(db.Boolean, default=False, index=True)$/;"	v	class:Role
+depends_on	alembic/versions/26990f2563eb_add_a_column.py	/^depends_on = None$/;"	v
+depends_on	alembic/versions/93bb9677b00f_create_account_table.py	/^depends_on = None$/;"	v
+dessert_time	models.py	/^    dessert_time = db.Column(db.DateTime(), default=datetime.utcnow)$/;"	v	class:Event
+diet	auth/forms.py	/^    diet = RadioField('Ernährungsweise', choices=[('1', 'Vegetarier'),('2', 'Veganer'), ('3', 'Alles')], validators=[Required()])$/;"	v	class:RegistrationForm
+diet	main/forms.py	/^    diet = RadioField('Ernährungsweise', choices=[('1', 'Vegetarier'),('2', 'Veganer'), ('3', 'Alles')], validators=[Required()])$/;"	v	class:EditProfileForm
+diet	models.py	/^    diet = db.Column(db.String(64)) #normal, vegetarian, vegan$/;"	v	class:Team
+down_revision	alembic/versions/26990f2563eb_add_a_column.py	/^down_revision = '93bb9677b00f'$/;"	v
+down_revision	alembic/versions/93bb9677b00f_create_account_table.py	/^down_revision = None$/;"	v
+downgrade	alembic/versions/26990f2563eb_add_a_column.py	/^def downgrade():$/;"	f
+downgrade	alembic/versions/93bb9677b00f_create_account_table.py	/^def downgrade():$/;"	f
+email	auth/forms.py	/^    email = StringField('E-Mail', validators=[Required(), Length(1, 64)])$/;"	v	class:LoginForm
+email	main/forms.py	/^    email = StringField('Email von Teilnehmer', validators=[Required(), Length(1, 64),Email()])$/;"	v	class:EditProfileForm
+email	models.py	/^    email = db.Column(db.String(64), unique=True, index=True)$/;"	v	class:User
+email_1	auth/forms.py	/^    email_1 = StringField('Email von Teilnehmer 1', validators=[Required(), Length(1, 64),Email()])$/;"	v	class:RegistrationForm
+email_2	auth/forms.py	/^    email_2 = StringField('Email von Teilnehmer 2', validators=[Required(), Length(1, 64),Email()])$/;"	v	class:RegistrationForm
+engine_from_config	alembic/env.py	/^from sqlalchemy import engine_from_config, pool$/;"	i
+event_id	models.py	/^    event_id = db.Column(db.Integer, db.ForeignKey('Event.id'))$/;"	v	class:EventList
+event_settings	main/views.py	/^def event_settings():$/;"	f
+eventlist_id	models.py	/^    eventlist_id = db.Column(db.Integer, db.ForeignKey('Event.id'))$/;"	v	class:Team
+fileConfig	alembic/env.py	/^from logging.config import fileConfig$/;"	i
+flash	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+flash	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+forgery_py	models.py	/^    import forgery_py$/;"	i
+g	decorators.py	/^from flask import g, request, redirect, url_for$/;"	i
+generate_confirmation_token	models.py	/^    def generate_confirmation_token(self, expiration=3600):$/;"	m	class:User
+generate_fake	models.py	/^def generate_fake(count=36):$/;"	f
+generate_password_hash	models.py	/^from werkzeug.security import generate_password_hash, check_password_hash$/;"	i
+geocodeAddress	templates/auth/register.html	/^function geocodeAddress() {$/;"	f
+id	models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	v	class:Event
+id	models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	v	class:EventList
+id	models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	v	class:Role
+id	models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	v	class:Team
+id	models.py	/^    id = db.Column(db.Integer, primary_key=True)$/;"	v	class:User
+import	auth/views.py	/^from . import auth # import Blueprint object$/;"	i
+index	main/views.py	/^def index():$/;"	f
+initMap	templates/auth/register.html	/^function initMap() {$/;"	f
+insert_roles	models.py	/^    def insert_roles():$/;"	m	class:Role
+is_administrator	models.py	/^    def is_administrator(self):$/;"	m	class:AnonymousUser
+is_administrator	models.py	/^    def is_administrator(self):$/;"	m	class:User
+json	main/views.py	/^import json$/;"	i
+json	models.py	/^import json$/;"	i
+jsonify	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+last_seen	models.py	/^    last_seen = db.Column(db.DateTime(), default=datetime.utcnow)$/;"	v	class:User
+load_user	models.py	/^    def load_user(user_id):$/;"	m	class:User
+location	main/forms.py	/^    location = StringField('Addresse von unserer Küche', validators=[Required(), Length(1, 64)])$/;"	v	class:EditProfileForm
+login	auth/views.py	/^def login():$/;"	f
+login_manager	factory.py	/^login_manager = LoginManager()$/;"	v
+login_manager	models.py	/^from .factory import login_manager$/;"	i
+login_required	auth/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+login_required	main/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+login_user	auth/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+login_user	main/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+logout	auth/views.py	/^def logout():$/;"	f
+logout	main/views.py	/^def logout():$/;"	f
+logout_user	auth/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+logout_user	main/views.py	/^from flask_login import login_user, logout_user, login_required, current_user$/;"	i
+mail	email.py	/^from .factory import mail$/;"	i
+mail	factory.py	/^mail = Mail()$/;"	v
+main	main/__init__.py	/^main = Blueprint('main', __name__)$/;"	v
+main	main/views.py	/^from . import main$/;"	i
+main_blueprint	factory.py	/^    from .main import main as main_blueprint$/;"	i
+main_time	models.py	/^    main_time = db.Column(db.DateTime(), default=datetime.utcnow)$/;"	v	class:Event
+make_response	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+map	static/js/area.js	/^var map;$/;"	v
+members	models.py	/^    members = db.relationship('User', back_populates="team")$/;"	v	class:Team
+models	alembic/env.py	/^from flask_app import models$/;"	i
+name	main/forms.py	/^    name = StringField('Teilnehmer 1', validators=[$/;"	v	class:EditProfileForm
+name	models.py	/^    name = db.Column(db.String(64))$/;"	v	class:User
+name	models.py	/^    name = db.Column(db.String(64), unique=True)$/;"	v	class:Role
+name_1	auth/forms.py	/^    name_1 = StringField('Teilnehmer 1', validators=[$/;"	v	class:RegistrationForm
+name_2	auth/forms.py	/^    name_2 = StringField('Teilnehmer 2', validators=[$/;"	v	class:RegistrationForm
+object	auth/views.py	/^from . import auth # import Blueprint object$/;"	i
+op	alembic/versions/26990f2563eb_add_a_column.py	/^from alembic import op$/;"	i
+op	alembic/versions/93bb9677b00f_create_account_table.py	/^from alembic import op$/;"	i
+os	default_config.py	/^import os$/;"	i
+password	auth/forms.py	/^    password = PasswordField('Password', validators=[Required()])$/;"	v	class:LoginForm
+password	main/forms.py	/^    password = PasswordField('Password')$/;"	v	class:EditProfileForm
+password	models.py	/^    def password(self):$/;"	m	class:User
+password	models.py	/^    def password(self, password):$/;"	m	class:User
+password_hash	models.py	/^    password_hash = db.Column(db.String(128))$/;"	v	class:User
+permissions	models.py	/^    permissions = db.Column(db.Integer)$/;"	v	class:Role
+ping	models.py	/^    def ping(self):$/;"	m	class:User
+polygon	models.py	/^    def polygon(self):$/;"	m	class:Event
+polygon	models.py	/^    def polygon(self, value):$/;"	m	class:Event
+polygonArray	static/js/area.js	/^var polygonArray = [];$/;"	v
+pool	alembic/env.py	/^from sqlalchemy import engine_from_config, pool$/;"	i
+postcode	auth/forms.py	/^    postcode = StringField('Postcode', validators=[Required(), Length(1, 16)])$/;"	v	class:RegistrationForm
+postcode	models.py	/^    postcode = None$/;"	v	class:Event
+postcode	models.py	/^    postcode = db.Column(db.String(16))$/;"	v	class:Team
+random	auth/views.py	/^import random$/;"	i
+random	models.py	/^    import random$/;"	i
+redirect	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+redirect	decorators.py	/^from flask import g, request, redirect, url_for$/;"	i
+redirect	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+register	auth/views.py	/^def register():$/;"	f
+register	main/views.py	/^def register():$/;"	f
+remember_me	auth/forms.py	/^    remember_me = BooleanField('Keep me logged in')$/;"	v	class:LoginForm
+render_template	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+render_template	email.py	/^from flask import current_app, render_template$/;"	i
+render_template	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+request	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+request	decorators.py	/^from flask import g, request, redirect, url_for$/;"	i
+request	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+requests	models.py	/^import requests$/;"	i
+resend_confirmation	auth/views.py	/^def resend_confirmation():$/;"	f
+resetPolygon	static/js/area.js	/^function resetPolygon() {$/;"	f
+revision	alembic/versions/26990f2563eb_add_a_column.py	/^revision = '26990f2563eb'$/;"	v
+revision	alembic/versions/93bb9677b00f_create_account_table.py	/^revision = '93bb9677b00f'$/;"	v
+role_id	models.py	/^    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))$/;"	v	class:User
+run_migrations_offline	alembic/env.py	/^def run_migrations_offline():$/;"	f
+run_migrations_online	alembic/env.py	/^def run_migrations_online():$/;"	f
+sa	alembic/versions/26990f2563eb_add_a_column.py	/^import sqlalchemy as sa$/;"	i
+sa	alembic/versions/93bb9677b00f_create_account_table.py	/^import sqlalchemy as sa$/;"	i
+seed	models.py	/^    from random import seed$/;"	i
+send_async_email	email.py	/^def send_async_email(app, msg):$/;"	f
+send_email	auth/views.py	/^from ..email import send_email$/;"	i
+send_email	email.py	/^def send_email(to, subject, template, **kwargs):$/;"	f
+session	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+settings	main/views.py	/^def settings():$/;"	f
+specialties	auth/forms.py	/^    specialties = TextField('Specialties', validators=[Length(0,200)])$/;"	v	class:RegistrationForm
+specialties	main/forms.py	/^    specialties = StringField('Specialties', validators=[Required(), Length(1, 64)])$/;"	v	class:EditProfileForm
+specialties	models.py	/^    specialties = db.Column(db.Text()) # e.g. allergic to bananas$/;"	v	class:Team
+starter_time	models.py	/^    starter_time = db.Column(db.DateTime(), default=datetime.utcnow)$/;"	v	class:Event
+street	auth/forms.py	/^    street = StringField('Street', validators=[Required(), Length(1, 64)])$/;"	v	class:RegistrationForm
+street	models.py	/^    street = db.Column(db.String(128))$/;"	v	class:Team
+subdomain	models.py	/^    subdomain = db.Column(db.String(64))$/;"	v	class:EventList
+submit	auth/forms.py	/^    submit = SubmitField('Log in')$/;"	v	class:LoginForm
+submit	auth/forms.py	/^    submit = SubmitField('Register')$/;"	v	class:RegistrationForm
+submit	main/forms.py	/^    submit = SubmitField('Change Data')$/;"	v	class:EditProfileForm
+target_metadata	alembic/env.py	/^target_metadata = models.Base.metadata$/;"	v
+team	models.py	/^    team = db.relationship("Team", back_populates="members")$/;"	v	class:User
+team_id	models.py	/^    team_id = db.Column(db.Integer, db.ForeignKey('teams.id'))$/;"	v	class:User
+teamname	auth/forms.py	/^    teamname = StringField('Teamname', validators=[$/;"	v	class:RegistrationForm
+teamname	main/forms.py	/^    teamname = StringField('Teamname', validators=[$/;"	v	class:EditProfileForm
+teamname	models.py	/^    teamname = db.Column(db.String(64))$/;"	v	class:Team
+unconfirmed	auth/views.py	/^def unconfirmed():$/;"	f
+upgrade	alembic/versions/26990f2563eb_add_a_column.py	/^def upgrade():$/;"	f
+upgrade	alembic/versions/93bb9677b00f_create_account_table.py	/^def upgrade():$/;"	f
+url_for	auth/views.py	/^from flask import render_template, redirect, request, url_for, flash, current_app$/;"	i
+url_for	decorators.py	/^from flask import g, request, redirect, url_for$/;"	i
+url_for	main/views.py	/^from flask import render_template, session, redirect, url_for, current_app, jsonify, request, flash, make_response$/;"	i
+users	models.py	/^    users = db.relationship('User', backref='role', lazy='dynamic')$/;"	v	class:Role
+validate_email	auth/forms.py	/^    def validate_email(self, field):$/;"	m	class:RegistrationForm
+verify_password	models.py	/^    def verify_password(self, password):$/;"	m	class:User
+views	auth/__init__.py	/^from . import views$/;"	i
+views	main/__init__.py	/^from . import views$/;"	i
+with_statement	alembic/env.py	/^from __future__ import with_statement$/;"	i
+wraps	decorators.py	/^from functools import wraps$/;"	i

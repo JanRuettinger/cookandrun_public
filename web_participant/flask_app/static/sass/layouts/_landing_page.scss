@@ -1,0 +1,67 @@
+.general-bg {
+background: url(../img/opt/bg_food.png) no-repeat center center fixed;
+  background-size: cover;
+}
+.lp-container {
+  @include grid-container;
+
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 0px;;
+  background-color: $navbar-background-color;
+
+  @include grid-media($media-md) {
+    @include grid-column(6);
+    @include grid-push(3);
+
+    margin-top: 100px;
+    margin-bottom: 90px;
+  }
+
+  @include grid-media($media-sm-max) {
+    @include grid-column(12);
+
+    margin-top: 50px;
+    margin-bottom: 90px;
+  }
+
+  .headline{
+    @include grid-container;
+    @include grid-column(10);
+    @include grid-push(1);
+    color: green;
+    margin-bottom: 15px;
+  }
+  .description{
+    @include grid-container;
+    @include grid-column(10);
+    @include grid-push(1);
+    color: blue;
+
+    ol {
+      list-style-position: inside;
+      list-style: decimal;
+      text-align: left;
+    }
+  }
+  .maps-wrapper {
+    @include grid-container;
+    @include grid-column(10);
+    @include grid-push(1);
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+
+  #map {
+  height: 500px;
+  }
+
+  .register-wrapper {
+    @include grid-container;
+    @include grid-column(10);
+    @include grid-push(1);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+}
+

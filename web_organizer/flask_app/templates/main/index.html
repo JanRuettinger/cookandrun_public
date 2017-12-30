@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+
+{% block page_content %}
+<div class="page-header">Your events</div><hr>
+    <div class="index-container">
+      {% if events is none  %}
+        <div class="">Bisher hast du noch keine Events veranstaltet!</div>
+      {% else %}
+      <table class="event-table">
+        <tr class="event-table-header">
+          <th class="event-table-row-header">Event name</th>
+          <th class="event-table-row-header date">Datum</th>
+          <th class="event-table-row-header location">Ort</th>
+          <th class="event-table-row-header">Anzahl Teilnehmer</th>
+          <th class="event-table-row-header">Status</th>
+          <th class="event-table-row-header">Edit</th>
+        </tr>
+        {% for e in events %}
+
+          <tr class="event-table-row">
+            <td>{{e[0].name}}</td>
+            <td class='date'>{{e[0].date | event_date}}</td>
+            <td class='location'>{{e[0].city}}</td>
+            <td>{{e[1]}}</td>
+            <td>
+              {% if e[0].status == 0  %}
+                draft mode
+              {% elif e[0].status == 1 %}
+                draft finished
+              {% elif e[0].status == 2 %}
+                registration open
+              {% elif e[0].status == 3 %}
+                registration closed
+              {% elif e[0].status == 4 %}
+                ready for draw
+              {% elif e[0].status == 5 %}
+                draw finished
+              {% elif e[0].status == 6 %}
+                event is active
+              {% else %}
+                event is hacked
+              {% endif %}
+              </td>
+            <td><a href="{{url_for('event.show_event', id = e[0].id)}}">Edit</a></td>
+          </tr>
+        {% endfor %}
+        </table>
+      {% endif %}
+      <a href="{{url_for('event.new')}}" class="button">Create new event</a>
+</div>
+
+{% endblock %}
+
+

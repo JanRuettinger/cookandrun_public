@@ -1,0 +1,68 @@
+{% macro render_field(field) %}
+
+  <dd>{{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </dd>
+
+{% endmacro %}
+
+{% macro render_field_with_value(value1, value2) %}
+
+  <dd><label for="email">Email</label>
+  <input id="email" name="email" type="text" value={{value1}} readonly>
+  </dd>
+    <dd><label for="token">Token</label>
+  <input id="token" name="token" type="text" value={{value2}} readonly>
+  </dd>
+
+{% endmacro %}
+
+
+{% macro render_field(field, type, placeholder) %}
+  <input id="{{ field.name }}" name="{{ field.name }}" type="{{ type }}" placeholder="{{ placeholder }}" value="{{ field.data }}">
+
+  {% if field.errors %}
+  <div class="form-error">
+  {% for e in field.errors %}
+    {{ e }}
+    <br>
+  {% endfor %}
+  </div>
+  {% endif %}
+
+{% endmacro %}
+
+{% macro render_field_placeholder(field, placeholder, id = field.name, type = "text", value = field.data, class="") %}
+
+  {% if value != none and value is not string%}
+  <input id="{{ id }}" name="{{ field.name }}" type="{{ type }}" placeholder="{{ placeholder }}" value="{{ value | event_date}}" class="{{ class }}">
+  {% elif value != none %}
+   <input id="{{ id }}" name="{{ field.name }}" type="{{ type }}" placeholder="{{ placeholder }}" value="{{ value }}" class="{{ class }}" >
+  {% else %}
+  <input id="{{ id }}" name="{{ field.name }}" type="{{ type }}" placeholder="{{ placeholder }}" value="" class="{{ class }}">
+  {% endif %}
+
+  {% if field.errors %}
+  <div class="form-error">
+  {% for e in field.errors %}
+    {{ e }}
+    <br>
+  {% endfor %}
+  </div>
+  {% endif %}
+
+{% endmacro %}
+
+
+
+
+
+
+

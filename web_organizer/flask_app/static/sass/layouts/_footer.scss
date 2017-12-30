@@ -1,0 +1,21 @@
+// Footer Styles
+// footer {
+//   background: $blue;
+//   color: white;
+//   padding: $pad * 2;
+
+//   div {
+//     @extend .container
+//   }
+// }
+
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0rem;
+  background-color: $secondary-background-color;
+  text-align: center;
+}

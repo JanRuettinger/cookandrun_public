@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+<body>
+
+    {% block content %}
+
+      {% block page_content %}
+
+       <div class="lp-container">
+           <div class="headline"><h1>What is this event about?</h1></div>
+              <div class="description">
+                <ol>
+                  <li>Team up with a partner</li>
+                  <li>Prepare one awesome meal for two other teams</li>
+                  <li>Enjoy two other meals prepared by two other teams</li>
+                </ol>
+            </div>
+            <div class="maps-wrapper">
+              <div id="map"></div>
+            </div>
+            <div class="register-wrapper">
+                {% if event.status == 2  %}
+                 <a href="{{ url_for('auth.register') }}" class="">Sign up your team!</a>
+                {% elif event.status == 6 %}
+                  <p>Event has started!</p>
+                {% else %}
+                  <p>Registration is closed!</p>
+                {% endif %}
+            </div>
+          </div>
+       </div>
+
+
+      {% endblock %}
+    {% endblock %}
+
+    {% block script %}
+
+<script type="text/javascript">
+  var lat = {{ lat }};
+  var lng = {{ lng }};
+  var coordsDB = {{ db_polygon|safe }};
+</script>
+
+<script src="{{url_for('static', filename='js/show_map.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=initMap"
+         async defer></script>
+
+
+{% endblock %}
+</body>
+</html>
+
+
+
+

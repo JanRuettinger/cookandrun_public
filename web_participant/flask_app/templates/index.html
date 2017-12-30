@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+
+{% block page_content %}
+
+{% if event.status != 6 %}
+
+<div class="settings-container">
+    <h1>Event noch nicht gestartet</h1>
+Das Event wurde noch nicht offiziell gestartet. <br>
+Du wirst per E-Mail informiert, sobald die Paare ausgelost sind.
+
+</div>
+
+{% else %}
+<div class="timetable">
+    <h1>Ablauf</h1>
+        <h2>{{event.starter_time}} - Starter</h2>
+          {% if host_1 == -1  %}
+          <p>Dein Team ist an der Reihe!</p>
+          Diet of your guests: {{diet}}
+          {% else %}
+           <p>Du wirst bekocht von Team {{host_1.teamname}} <br>
+           Adresse: {{host_1.city}}, {{host_1.street}}</p>
+          {% endif %}
+     <hr>
+     <h2>{{event.main_time}} - Main</h2>
+          {% if host_2 == -1  %}
+          <p>Dein Team ist an der Reihe!</p>
+          Diet of your guests: {{diet}}
+          {% else %}
+           <p>Du wirst bekocht von Team {{host_2.teamname}} <br>
+           Adresse: {{host_2.city}}, {{host_2.street}}</p>
+          {% endif %}
+    <hr>
+    <h2>{{event.dessert_time}} - Dessert</h2>
+          {% if host_3 == -1  %}
+          <p>Dein Team ist an der Reihe!</p>
+          Diet of your guests: {{diet}}
+          {% else %}
+           <p>Du wirst bekocht von Team {{host_3.teamname}}! <br>
+           Adresse: {{host_3.city}}, {{host_3.street}}</p>
+          {% endif %}
+
+    {% if event.afterparty_flag == 1 %}
+    <hr>
+      <h2>{{event.starter_time}} - Afterparty</h2>
+          Adresse: {{event.afterparty_address}}<br>
+          {{event.afterparty_description}}
+    {% endif %}
+</div>
+
+{% endif %}
+
+
+{% endblock %}
+
+

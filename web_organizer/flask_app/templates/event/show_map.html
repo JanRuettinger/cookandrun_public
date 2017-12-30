@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+
+<!-- <script src="{{url_for('static', filename='js/event.js')}}"></script> -->
+
+{% endblock %}
+
+
+{% block title %}Show map{% endblock %}
+
+{% block page_content %}
+
+<div class="page-header">Map</div><hr>
+  <div class="maps-wrapper">
+      <div id="map"></div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript">
+    var teams_long = {{ teams | tojson}};
+    console.log(teams_long);
+    var lat = {{ lat }};
+    var lng = {{ lng }};
+</script>
+
+<script src="{{url_for('static', filename='js/map_participants.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&libraries=drawing&callback=initMap"
+         async defer></script>
+
+{% endblock %}
+

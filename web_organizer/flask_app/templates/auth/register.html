@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<!-- <script src="{{url_for('static', filename='js/register.js')}}"></script> -->
+
+{% endblock %}
+
+
+{% block title %}Register{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">Register</div>
+    <hr>
+<!-- </div> -->
+<div class="register-form">
+        <form action="register" method="post">
+        {% from "partials/_formhelper.html" import render_field_placeholder %}
+         <!--  <legend>General information</legend> -->
+            {{render_field_placeholder(form.name, "Your firstname")}}
+            {{render_field_placeholder(form.email, "E-Mail")}}
+
+            {{ form.csrf_token }}
+           <!--  {{ form.submit }} -->
+
+           <input type=submit value=Register>
+
+        </form>
+</div>
+
+{% endblock %}
